@@ -1,19 +1,28 @@
-import { Input } from 'antd'
+import { Col, Input, Row } from 'antd'
 import Link from 'next/link'
-import React from 'react'
-import { HeaderWrap, Logo, MenuItem, MenuWrap } from '../styles/components/AppLayout'
+import React, { Children } from 'react'
+import { HeaderWrap, Logo, MenuItem, MenuItems, MenuWrap } from '../styles/components/AppLayout'
+import LoginPage from './LoginPage'
 
-const AppLayout = () => {
+const AppLayout = ({children}) => {
 	return (
 		<>
 			<HeaderWrap>
 				<Logo>SolZi</Logo>
 				<MenuWrap>
-					<MenuItem><Link href='/'><a>HOME</a></Link></MenuItem>
-					<MenuItem><Link href='/signup'><a>회원가입</a></Link></MenuItem>
-					<Input.Search enterButton style={{ verticalAlign: 'middle' , width: '35%'}} />
+					<MenuItem><Link href='/'><MenuItems>HOME</MenuItems></Link></MenuItem>
+					<MenuItem><Link href='/signup'><MenuItems>SIGNUP</MenuItems></Link></MenuItem>
+					<Input.Search enterButton style={{ verticalAlign: 'middle' , width: '50%'}} />
 				</MenuWrap>
 			</HeaderWrap>
+			<Row gutter={8}>
+				<Col xs={24} md={16}>
+					{children}
+				</Col>
+				<Col xs={24} md={8}>
+					<LoginPage />
+				</Col>
+			</Row>
 		</>
 	)
 }
