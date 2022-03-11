@@ -1,5 +1,11 @@
-import { Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import styled from "styled-components";
+
+export const LoginForm = styled(Form)`
+	width: 100%;
+	height: 100%;
+	border-left: 1px solid #ededed;
+`;
 
 export const FormWrap = styled(Form)`
 	width: 100%;
@@ -10,6 +16,16 @@ export const FormWrap = styled(Form)`
 	margin: 1rem 0;
 `;
 
+export const LgonFormWrap = styled.div`
+	width: 100%;
+	height: 55%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	/* border-bottom: 1px solid #ededed; */
+`;
+
 export const ContentWrap = styled.div`
 	width: 45%;
 	height:60vh;
@@ -17,7 +33,7 @@ export const ContentWrap = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: lightpink;
+	background-color: #dde3ed;
 	margin-top: 10vh;
 `;
 
@@ -25,10 +41,28 @@ export const FormContent = styled.div`
 	width: 55%;
 	height: 12%;
 	display: flex;
-	align-items: center;
+	height: ${props => props.$type == 'check' ? '5%' : '12%'} ;
 	flex-direction: column;
 	justify-content: space-between;
-	margin: 1rem 0;
+	margin: .5rem 0;
+`;
+
+export const LoginFormContent = styled.div`
+	width: 80%;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+`;
+
+export const SignupTitle = styled.div`
+	width:55%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-top: -1rem;
 	/* border: 1px solid red; */
 `;
 
@@ -45,4 +79,29 @@ export const FormInput = styled(Input)`
 	width: 100%;
 	height: 55%;
 	border-radius: .25rem;
+`;
+
+export const ButtonWrap = styled.div`
+	width: 80%;
+	height: 20%;
+	margin-top: 1.2rem;
+	display: flex;
+	flex-direction: column;
+`;
+
+export const LoginButton = styled(Button)`
+	width: 100%;
+	height: 55%;
+`;
+
+export const LinkTitle = styled.div`
+	width: 100%;
+	text-decoration: none;
+	color: darkgoldenrod;
+	font-weight: 600;
+	font-size: .9rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-top: .5rem;
 `;
