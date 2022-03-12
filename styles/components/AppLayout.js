@@ -19,7 +19,7 @@ export const HeaderWrap = styled.div`
 `;
 
 export const HeaderContiner = styled.div`
-	width: 90%;
+	width: 75%;
 	height: 100%;
 	display: flex;
 	align-items: center;

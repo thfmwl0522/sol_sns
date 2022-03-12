@@ -60,7 +60,7 @@ export const SignupTitle = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1.8rem;
+	font-size: 1.925rem;
 	font-weight: bold;
 	margin-top: -1rem;
 	/* border: 1px solid red; */
@@ -78,6 +78,7 @@ export const FormTitle = styled.div`
 export const FormInput = styled(Input)`
 	width: 100%;
 	height: 55%;
+	margin-top: .25rem;
 	border-radius: .25rem;
 `;
 
@@ -92,12 +93,14 @@ export const ButtonWrap = styled.div`
 export const LoginButton = styled(Button)`
 	width: 100%;
 	height: 55%;
+	font-size: 1rem;
+	font-weight: 600;
 `;
 
 export const LinkTitle = styled.div`
 	width: 100%;
 	text-decoration: none;
-	color: darkgoldenrod;
+	color: #7d91b0;
 	font-weight: 600;
 	font-size: .9rem;
 	display: flex;

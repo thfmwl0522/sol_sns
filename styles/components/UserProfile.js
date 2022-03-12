@@ -1,9 +1,9 @@
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import styled from "styled-components";
 
 export const UserProfileWrap = styled.div`
 	width: 100%;
-	height: 100%;
+	height: 40%;
 	display: flex;
 	justify-content: center;
 	border-left: 1px solid #eeeeee;
@@ -11,7 +11,7 @@ export const UserProfileWrap = styled.div`
 
 export const UserProfileCard = styled.div`
 	width: 100%;
-	height: 40%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -35,6 +35,7 @@ export const ProfileContent = styled.div`
 	justify-content: center;
 	height: 70%;
 	flex-direction: column;
+	position: relative;
 `;
 
 export const ProfileTitle = styled.div`
@@ -55,10 +56,6 @@ export const ProfileSubWrap = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	/* border-right: 1px solid #eeeeee;
-	:last-child {
-		border-right: none;
-	} */
 `;
 
 export const ProfileSubTitle = styled.div`
@@ -69,4 +66,13 @@ export const ProfileSubTitle = styled.div`
 export const ProfileSub = styled.div`
 	font-size: .925rem;
 	font-weight: 500;
+`;
+
+export const Logout = styled(Button)`
+	width: 20%;
+	height: 15%;
+	position: absolute;
+	right: 5%;
+	bottom: 8%;
+	/* border: none; */
 `;

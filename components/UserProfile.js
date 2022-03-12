@@ -9,7 +9,8 @@ import {
 	ProfileSubContent,
 	ProfileSubWrap,
 	ProfileSubTitle,
-	ProfileSub
+	ProfileSub,
+	Logout
 } from "../styles/components/UserProfile";
 
 const UserProfile = () => {
@@ -19,6 +20,7 @@ const UserProfile = () => {
 				<ProfileContent>
 					<ProfileImg src={`/sol.png`} />
 					<ProfileTitle>SolZi</ProfileTitle>
+					<Logout>로그아웃</Logout>
 				</ProfileContent>
 				<ProfileSubContent>
 					<ProfileSubWrap>
