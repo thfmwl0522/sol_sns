@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const LoginForm = styled(Form)`
 	width: 100%;
-	height: 100%;
-	border-left: 1px solid #ededed;
+	height: 80vh;
+	/* border-left: 1px solid #ededed; */
 `;
 
 export const FormWrap = styled(Form)`
@@ -13,7 +13,8 @@ export const FormWrap = styled(Form)`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	margin: 1rem 0;
+	height: 92vh;
+	border-right: 1px solid #eeeeee;
 `;
 
 export const LgonFormWrap = styled.div`
@@ -27,14 +28,14 @@ export const LgonFormWrap = styled.div`
 `;
 
 export const ContentWrap = styled.div`
-	width: 45%;
-	height:60vh;
+	width: 50%;
+	height: 60vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	background-color: #dde3ed;
-	margin-top: 10vh;
+	/* margin-top: 10vh; */
 `;
 
 export const FormContent = styled.div`

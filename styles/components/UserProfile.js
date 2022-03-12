@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 export const UserProfileWrap = styled.div`
 	width: 100%;
-	height: 40%;
+	height: 360px;
 	display: flex;
 	justify-content: center;
+	background-color: seagreen;
 	border-left: 1px solid #eeeeee;
 `;
 

@@ -2,9 +2,8 @@ import { Card } from "antd";
 import styled from "styled-components";
 
 export const PostCardWrapper = styled.div`
-	width: 60%;
-	margin: 0 auto;
-	background-color: seashell;
+	width: 50%;
+	margin: 1.5rem auto 0;
 `;
 
 export const CardContent = styled(Card)`

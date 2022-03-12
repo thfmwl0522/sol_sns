@@ -36,7 +36,7 @@ const signup = () => {
 	},[password, passwordCheck, term]);
 
 	return (
-		<AppLayout>
+		<AppLayout type="signup">
 			<Head>
 				<title>회원가입</title>
 			</Head>

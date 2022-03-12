@@ -1,12 +1,12 @@
 import { Col, Input, Row } from 'antd'
 import Link from 'next/link'
 import React, { Children } from 'react'
-import { Container, ContainerWrap, HeaderContiner, HeaderWrap, Logo, MenuItem, MenuItems, MenuWrap } from '../styles/components/AppLayout'
+import { Container, ContainerWrap, ContentWrap, HeaderContiner, HeaderWrap, Logo, MenuItem, MenuItems, MenuWrap, ProfileWrap, SectionWrap } from '../styles/components/AppLayout'
 import LoginPage from './LoginPage'
 import PostUploadForm from './PostUploadForm'
 import UserProfile from './UserProfile'
 
-const AppLayout = ({children}) => {
+const AppLayout = ({children, type}) => {
 	return (
 		<ContainerWrap>
 			<HeaderWrap>
@@ -15,21 +15,29 @@ const AppLayout = ({children}) => {
 					<MenuWrap>
 						<MenuItem><Link href='/'><MenuItems>HOME</MenuItems></Link></MenuItem>
 						<MenuItem><Link href='/signup'><MenuItems>SIGNUP</MenuItems></Link></MenuItem>
-						{/* <MenuItem><MenuItems>LOGOUT</MenuItems></MenuItem> */}
 						<Input.Search enterButton style={{ verticalAlign: 'middle' , width: '50%'}} />
 					</MenuWrap>
 				</HeaderContiner>
 			</HeaderWrap>
-			<Row gutter={8} style={{width: '80%', height: '92vh', margin: '0 auto'}}>
-				<Col xs={24} md={17} style={{overflowY: 'scroll'}}>
+			<SectionWrap $type={type}>
+				<ContentWrap>
 					{children}
-				</Col>
-				<Col xs={24} md={7}>
+				</ContentWrap>
+				<ProfileWrap>
 					{/* <LoginPage /> */}
 					<UserProfile />
 					<PostUploadForm />
+				</ProfileWrap>
+			</SectionWrap>
+			{/* <Row gutter={8} style={{width: '80%', height: '92vh', margin: '0 auto'}}>
+				<Col xs={24} md={17} style={{border: '1px solid red', marginTop: '8vh'}}>
+					{children}
 				</Col>
-			</Row>
+				<Col xs={24} md={7}>
+					<UserProfile />
+					<PostUploadForm />
+				</Col>
+			</Row> */}
 		</ContainerWrap>
 	)
 }

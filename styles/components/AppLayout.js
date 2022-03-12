@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ContainerWrap = styled.div`
 	width: 100%;
-	height: 100%;
 `;
 
 export const Container = styled.div`
@@ -15,7 +14,12 @@ export const HeaderWrap = styled.div`
 	width: 100%;
 	height: 8vh;
 	border-bottom: 1px solid #eeeeee;
-
+	position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+	background-color: white;
+	z-index: 99;
 `;
 
 export const HeaderContiner = styled.div`
@@ -63,4 +67,36 @@ export const MenuItems = styled.a`
 	font-size: 1rem;
 	color: #333;
 	font-weight: 500;
+`;
+
+export const SectionWrap = styled.div`
+	width: 80%;
+	height: 92vh;
+	overflow-y: ${props =>
+		props.$type == 'signup' ? 'hidden' : 'auto'};
+	margin: 8vh auto 0;
+	display: flex;
+	flex-direction: row;
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #d4d4d4;
+		border: 4px solid transparent;
+		border-radius: 50px;
+	}
+	::-webkit-scrollbar-track {
+		background-color: #eeeeee;
+	}
+`;
+
+export const ContentWrap = styled.div`
+	width: 68%;
+`;
+
+export const ProfileWrap = styled.div`
+	width: 24%;
+	position: fixed;
+	top: 8vh;
+	right: 12%;
 `;

@@ -7,6 +7,18 @@ const Home = () => {
 	return (
 		<AppLayout>
 			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
+			<PostCard />
 		</AppLayout>
 	)
 }
