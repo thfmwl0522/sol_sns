@@ -1,7 +1,10 @@
 import produce from "immer";
 
+import shortId from 'shortid';
+// import faker from 'faker';
+
 export const initialState = {
-	mainPost: [],
+	mainPosts: [],
 	imagePaths: [],
 	morePosts: true,
 	loadPostsLoading: false,
@@ -17,6 +20,25 @@ export const initialState = {
 	addCommentDone: false,
 	addCommentError: null,
 };
+
+// export const generateDummyPost = (number) => Array(number).fill().map(() => ({
+//   id: shortId.generate(),
+//   User: {
+//     id: shortId.generate(),
+//     nickname: faker.name.findName(),
+//   },
+//   content: faker.lorem.paragraph(),
+//   Images: [{
+//     src: faker.image.image(),
+//   }],
+//   Comments: [{
+//     User: {
+//       id: shortId.generate(),
+//       nickname: faker.name.findName(),
+//     },
+//     content: faker.lorem.sentence(),
+//   }],
+// }));
 
 export const LOAD_POST = 'LOAD_POST';
 export const LOAD_POST_SUCCESS = 'LOAD_POST_SUCCESS';
@@ -55,6 +77,15 @@ const dummyPost = (data) => ({
 	Comments: [],
 });
 
+const dummyComment = (data) => ({
+	id: shortId.generate(),
+	content: data,
+	User: {
+		id: 1,
+		nickname : 'solzi'
+	}
+});
+
 const reducer = (state = initialState, action) => produce(state, (draft) => {
 	switch (action.type) {
 		case LOAD_POST:
@@ -65,36 +96,55 @@ const reducer = (state = initialState, action) => produce(state, (draft) => {
 		case LOAD_POST_SUCCESS:
 			draft.loadPostsLoading = false;
 			draft.loadPostsDone = true;
+			draft.mainPosts = action.data.concat(draft.mainPosts);
+			draft.hasMorePosts = draft.mainPosts.length < 50;
 			break;
 		case LOAD_POST_FAILURE:
-			
+			draft.loadPostsLoading = false;
+			draft.loadPostsError = action.error;
 			break;
 		case ADD_POST:
-			
+			draft.addPostLoading = true;
+			draft.addPostError = null;
+			draft.addPostDone = false;
 			break;
 		case ADD_POST_SUCCESS:
-			
+			draft.addPostLoading = false;
+			draft.addPostDone = true;
+			draft.mainPosts.unshift(dummyPost(action.data));
 			break;
 		case ADD_POST_FAILURE:
-			
+			draft.addPostLoading = false;
+			draft.addPostError = action.error;
 			break;
 		case REMOVE_POST:
-			
+			draft.removePostLoading = true;
+			draft.removePostError = null;
+			draft.removePostDone = false;
 			break;
 		case REMOVE_POST_SUCCESS:
-			
+			draft.removePostLoading = false;
+			draft.removePostDone = true;
+			draft.mainPosts = draft.mainPosts.filter((v) => v.id !== action.data);
 			break;
 		case REMOVE_POST_FAILURE:
-			
+			draft.removePostLoading = false;
+			draft.removePostError = action.error;
 			break;
 		case ADD_COMMENT:
-			
+			draft.addCommentLoading = true;
+			draft.addCommentError = null;
+			draft.addCommentDone = false;
 			break;
 		case ADD_COMMENT_SUCCESS:
-			
+			const post = draft.mainPosts.find((v) => v.id == action.data.postId);
+			post.Comments.unshift(dummyComment(action.data.content));
+			draft.addCommentLoading = false;
+			draft.addCommentDone = true;
 			break;
 		case ADD_COMMENT_FAILURE:
-			
+			draft.addCommentLoading = false;
+			draft.addCommentError = action.error;
 			break;
 		default:
 			break;

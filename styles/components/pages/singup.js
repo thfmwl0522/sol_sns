@@ -34,7 +34,10 @@ export const ContentWrap = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: #dde3ed;
+	background-color: #dae8e3;
+	/* background-color: #fcfcfc;/ */
+	/* border: 5px solid #dae8e3;/ */
+	border-radius: 1rem;
 	/* margin-top: 10vh; */
 `;
 

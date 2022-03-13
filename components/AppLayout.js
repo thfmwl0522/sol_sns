@@ -15,8 +15,8 @@ const AppLayout = ({children, type}) => {
 					<MenuWrap>
 						<MenuItem><Link href='/'><MenuItems>HOME</MenuItems></Link></MenuItem>
 						<Menu_Item><Link href='/profile'><MenuItems>SOlZi'S PROFILE</MenuItems></Link></Menu_Item>
-						<MenuItem><Link href='/mypage'><MenuItems>MYPAGE</MenuItems></Link></MenuItem>
-						{/* <MenuItem><Link href='/signup'><MenuItems>SIGNUP</MenuItems></Link></MenuItem> */}
+						{/* <MenuItem><Link href='/mypage'><MenuItems>MYPAGE</MenuItems></Link></MenuItem> */}
+						<MenuItem><Link href='/signup'><MenuItems>SIGNUP</MenuItems></Link></MenuItem>
 						{/* <Input.Search enterButton style={{ verticalAlign: 'middle' , width: '50%'}} /> */}
 					</MenuWrap>
 				</HeaderContiner>
@@ -26,9 +26,9 @@ const AppLayout = ({children, type}) => {
 					{children}
 				</ContentWrap>
 				<ProfileWrap>
-					{/* <LoginPage /> */}
-					<UserProfile />
-					<PostUploadForm />
+					<LoginPage />
+					{/* <UserProfile />
+					<PostUploadForm /> */}
 				</ProfileWrap>
 			</SectionWrap>
 			{/* <Row gutter={8} style={{width: '80%', height: '92vh', margin: '0 auto'}}>
