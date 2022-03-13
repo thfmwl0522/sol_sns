@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const PostCardWrapper = styled.div`
 	width: 50%;
-	margin: 1.5rem auto 0;
+	margin: 2.5rem auto 0;
 `;
 
 export const CardContent = styled(Card)`

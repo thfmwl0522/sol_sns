@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const ContainerWrap = styled.div`
 	width: 100%;
+	/* height: 90%; */
+	overflow: hidden;
 `;
 
 export const Container = styled.div`
 	width: 90%;
-	height: 100%;
+	/* height: 100%; */
 	margin: 0 auto;
 `;
 
@@ -51,16 +53,30 @@ export const MenuWrap = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-between;
 `;
 
-export const MenuItem = styled.div`
-	width: 22%;
+export const Menu_Item = styled.div`
+	width: 35%;
 	height: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 	font-size: 1rem;
 	color: #ededed;
+	/* border: 1px solid red; */
+`;
+
+export const MenuItem = styled.div`
+	width: 30%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	/* justify-content: flex-start; */
+	align-items: center;
+	font-size: 1rem;
+	color: #ededed;
+	/* border: 1px solid red; */
 `;
 
 export const MenuItems = styled.a`
@@ -99,4 +115,14 @@ export const ProfileWrap = styled.div`
 	position: fixed;
 	top: 8vh;
 	right: 12%;
+`;
+
+export const FollowWrap = styled.div`
+	width: 80%;
+	margin: 0 auto;
+	height: 45%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
 `;

@@ -1,7 +1,7 @@
 import { Col, Input, Row } from 'antd'
 import Link from 'next/link'
 import React, { Children } from 'react'
-import { Container, ContainerWrap, ContentWrap, HeaderContiner, HeaderWrap, Logo, MenuItem, MenuItems, MenuWrap, ProfileWrap, SectionWrap } from '../styles/components/AppLayout'
+import { Container, ContainerWrap, ContentWrap, HeaderContiner, HeaderWrap, Logo, MenuItem, MenuItems, MenuWrap, Menu_Item, ProfileWrap, SectionWrap } from '../styles/components/AppLayout'
 import LoginPage from './LoginPage'
 import PostUploadForm from './PostUploadForm'
 import UserProfile from './UserProfile'
@@ -14,8 +14,10 @@ const AppLayout = ({children, type}) => {
 					<Link href='/'><a><Logo>SolZi</Logo></a></Link>
 					<MenuWrap>
 						<MenuItem><Link href='/'><MenuItems>HOME</MenuItems></Link></MenuItem>
-						<MenuItem><Link href='/signup'><MenuItems>SIGNUP</MenuItems></Link></MenuItem>
-						<Input.Search enterButton style={{ verticalAlign: 'middle' , width: '50%'}} />
+						<Menu_Item><Link href='/profile'><MenuItems>SOlZi'S PROFILE</MenuItems></Link></Menu_Item>
+						<MenuItem><Link href='/mypage'><MenuItems>MYPAGE</MenuItems></Link></MenuItem>
+						{/* <MenuItem><Link href='/signup'><MenuItems>SIGNUP</MenuItems></Link></MenuItem> */}
+						{/* <Input.Search enterButton style={{ verticalAlign: 'middle' , width: '50%'}} /> */}
 					</MenuWrap>
 				</HeaderContiner>
 			</HeaderWrap>
